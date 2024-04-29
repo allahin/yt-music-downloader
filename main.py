@@ -1,10 +1,9 @@
 from pytube import YouTube
 from moviepy.editor import *
+import os
 
 id = input("Enter the video ID: ")
-
 name = input("Enter the file name: ")
-
 control = input("Shall we proceed? (y/n): ")
 
 if control != "y":
@@ -23,3 +22,6 @@ audioclip.write_audiofile(name+".wav")
 
 videoclip.close()
 audioclip.close()
+os.remove(video)
+
+print("Process completed successfully!")
